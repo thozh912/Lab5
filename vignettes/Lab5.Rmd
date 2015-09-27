@@ -1,6 +1,6 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Web API usage"
+author: "Andrea Bruzzone, Thomas Zhang"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >

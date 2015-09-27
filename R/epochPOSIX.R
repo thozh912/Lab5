@@ -12,11 +12,11 @@
 #' @return raw A POSIX string showing the time in CEST, DST adjusted.
 #'
 #' @examples
-#'  epoch_to_POSIX_converter("XXXXXX123465786456578")
+#'  epochPOSIX("XXXXXX123465786456578")
 #' 
 #' 
 
-epoch_to_POSIX_converter <- function(gbgjsondate){
+epochPOSIX <- function(gbgjsondate){
   x <- gbgjsondate
   vect_x <- substr(x,7,16)
   raw <- as.POSIXct(as.numeric(vect_x), origin="1970-01-01", tz="Europe/Stockholm")
