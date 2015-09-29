@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_song.R
 \name{get_song}
 \alias{get_song}
-\title{Returns a data frame with The song and artist playing currently}
+\title{Returns a data frame with The current program name and program episode playing currently}
 \usage{
 get_song(channel_name, channel_frame)
 }
@@ -12,7 +12,7 @@ get_song(channel_name, channel_frame)
 \item{channel_frame}{A data frame with channel names and channels.id.}
 }
 \value{
-song_file A dataframe with song name and performing artist.
+song_file A dataframe with program name and program episode.
 }
 \description{
 This function returns the current song and artist on the specified channel
