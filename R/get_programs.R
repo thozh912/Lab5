@@ -22,10 +22,10 @@ get_programs <- function(channel_frame){
   
   program_channel_ids <- charvect[which(names(charvect) == "programs.channel.id")]
   
-  program_file <- data.frame(program_names,program_channel_ids)
+  program_file <- data.frame(program_names,program_channel_ids,stringsAsFactors = FALSE)
   
-  first <- as.numeric(levels(program_file[,2]))[program_file[,2]]
-  second <- as.numeric(levels(ertiop[,2]))[ertiop[,2]]
+  first <- as.character(program_file[,2])
+  second <- as.character(ertiop[,2])
   
   for(i in 1:length(first)){
     for(j in 1:length(second)){
@@ -35,7 +35,7 @@ get_programs <- function(channel_frame){
     }
     
   }
-  program_file <- data.frame(program_file,channel_name)
+  program_file <- data.frame(program_file,channel_name,stringsAsFactors = FALSE)
   
   return(program_file)
 }

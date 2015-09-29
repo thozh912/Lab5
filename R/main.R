@@ -1,7 +1,19 @@
-rm(list=ls())
+#' The initializer function for the data
+#' 
+#' This function initializes channels and program .csv files for use in Shinyapp
+#' project by executing SR Open API requests.
+#' 
+#' 
 
-#library(httr)
 
-channels <- get_channels()
-programs <- get_programs(channels)
-song <- get_song("P2",channels)
+main <- function(){
+  channels <- get_channels()
+  programs <- get_programs(channels)
+  
+  
+  setwd("../Shinyapp/Newapp/data")
+  write.csv(channels,"channels.csv",row.names=FALSE,fileEncoding = "UTF-8")
+  write.csv(programs,"programs.csv",row.names=FALSE,fileEncoding = "UTF-8")
+  write.csv(song,"song.csv",row.names=FALSE,fileEncoding = "UTF-8")
+  setwd("../../../Lab5")
+}
