@@ -11,7 +11,7 @@ main <- function(){
   programs <- get_programs(channels)
   
   
-  setwd("../Shinyapp/Newapp/data")
+  setwd("../Shinyapp/data")
   write.csv(channels,"channels.csv",row.names=FALSE,fileEncoding = "UTF-8")
   write.csv(programs,"programs.csv",row.names=FALSE,fileEncoding = "UTF-8")
   write.csv(song,"song.csv",row.names=FALSE,fileEncoding = "UTF-8")
