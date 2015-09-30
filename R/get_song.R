@@ -1,4 +1,4 @@
-#' Returns a data frame with The song and artist playing currently
+#' Returns a data frame with The current program name and program episode playing currently
 #' 
 #' This function returns the current song and artist on the specified channel
 #' name from SR v.2. API.
@@ -7,7 +7,7 @@
 #'   
 #' @param channel_name A string containing the channel name.
 #'   
-#' @return song_file A dataframe with song name and performing artist.
+#' @return song_file A dataframe with program name and program episode.
 #'   
 
 get_song <- function(channel_name,channel_frame){
@@ -30,14 +30,16 @@ get_song <- function(channel_name,channel_frame){
   programnow <- charvecto[which(names(charvecto) == "channel.currentscheduledepisode.program.name")]
   names(programnow) <- c()
   
+
   programnowepisode <- charvecto[which(names(charvecto) == "channel.currentscheduledepisode.title")]
   names(programnowepisode) <- c()
   if(length(programnow) == 0){
     programnow <- "None"
     programnowepisode <- "None"
+
   }
-  #print(class(songnow))
-  #print(class(programnowepisode))
+
   song_file <-data.frame(programnow,programnowepisode,stringsAsFactors = FALSE)
+
   return(song_file)
 }
