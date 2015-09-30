@@ -43,7 +43,7 @@ c
 
 ## Shinyapp
 
-This package has a shiny app which can be run from github using call\code{runGitHub("thozh912/Shinyapp")}.
+This package has a shiny app which can be run from github using call \code{runGitHub("thozh912/Shinyapp")}.
 You need Lab5 package to run it.
 
 ```{r}
