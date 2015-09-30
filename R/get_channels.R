@@ -11,9 +11,11 @@ get_channels <- function(){
   channels <- charvec[which(names(charvec) == "channels.name")]
   names(channels) <- c()
   channels <- c(channels,"Barnwebben")
+  
   channel_ids <- charvec[which(names(charvec) == "channels.id")]
   channel_ids <- c(channel_ids,"1000")
-  channel_file <- data.frame(channels,channel_ids)
+  
+  channel_file <- data.frame(channels,channel_ids,stringsAsFactors = FALSE)
   
   return(channel_file)
 }

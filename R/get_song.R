@@ -17,7 +17,7 @@ get_song <- function(channel_name,channel_frame){
   
   for(i in 1:length(ertiop[,1])){
     if(channel_name == ertiop[i,1]){
-      songrightnow <- GET(paste0("http://api.sr.se/api/v2/playlists/rightnow?channelid=",ertiop[i,2],"&format=json&pagination=false"))
+      songrightnow <- GET(paste0("http://api.sr.se/api/v2/scheduledepisodes/rightnow?channelid=",ertiop[i,2],"&format=json&pagination=false"))
       
     }
   }
@@ -27,16 +27,17 @@ get_song <- function(channel_name,channel_frame){
   contur <- content(songrightnow)
   charvecto <- unlist(contur)
   
-  songnow <- charvecto[which(names(charvecto) == "playlist.previoussong.title")]
-  names(songnow) <- c()
+  programnow <- charvecto[which(names(charvecto) == "channel.currentscheduledepisode.program.name")]
+  names(programnow) <- c()
   
-  songnowartist <- charvecto[which(names(charvecto) == "playlist.previoussong.artist")]
-  names(songnowartist) <- c()
-  if(length(songnow) == 0){
-    songnow <- "None"
-    songnowartist <- "None"
+  programnowepisode <- charvecto[which(names(charvecto) == "channel.currentscheduledepisode.title")]
+  names(programnowepisode) <- c()
+  if(length(programnow) == 0){
+    programnow <- "None"
+    programnowepisode <- "None"
   }
-
-  song_file <-data.frame(songnow,songnowartist)
+  #print(class(songnow))
+  #print(class(programnowepisode))
+  song_file <-data.frame(programnow,programnowepisode,stringsAsFactors = FALSE)
   return(song_file)
 }
