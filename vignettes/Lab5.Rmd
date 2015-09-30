@@ -16,37 +16,41 @@ We have created a web API package which can request metadata from the SR Open AP
  
 ```{r,echo=FALSE,message=FALSE}
 library(Lab5)
-
+library(shiny)
 ```
 
 ## Functions
 
 There are three main functions in this package, we demonstrate them below.
-The function \code{get_channels} requests a list of available SR radio channels and their channel ids.
-```{r,echo=FALSE}
+The function get_channels requests a list of available SR radio channels and their channel ids.
+```{r}
 a <- get_channels()
 head(a)
 ```
-The function \code{get_programs} request the currently non-archived (i.e. purportedly still broadcasting) programs and returns a dataframe of their names, broadcast channel ids and broadcast channel name.
+The function get_programs requests the currently non-archived (i.e. purportedly still broadcasting) programs and returns a dataframe of their names, broadcast channel ids and broadcast channel name.
 
-```{r,echo=FALSE}
-b <- get_programs(get_channels)
+```{r}
+b <- get_programs(get_channels())
 head(b)
 ```
-The function \code{get_song} takes input a character channel name and a dataframe containing channels and channel ids. Despite the name, this function actually does not return the current song playing on the input channel. Rather, it returns the current program name and the current program episode playing on the channel, where applicable.
+The function get_song takes input a character channel name and a dataframe containing channels and channel ids. Despite the name, this function actually does not return the current song playing on the input channel. Rather, it returns the current program name and the current program episode playing on the channel, where applicable.
 
-```{r,echo=FALSE}
-c <-get_song("P3",get_channels)
+```{r}
+c <-get_song("P3",get_channels())
 c
 ```
 
+The main function runs the first two functions and saves the data frames returned, using fileEncoding = "UTF-8", in two .csv files in a folder one directory up and then two directories down into /Shinyapp/data.
+```{r,eval=FALSE}
+main()
+```
 
 ## Shinyapp
 
-This package has a shiny app which can be run from github using call \code{runGitHub("thozh912/Shinyapp")}.
-You need Lab5 package to run it.
+This package has a shiny app which can be run from github using call runGitHub("thozh912/Shinyapp").
+You need Lab5 package and shiny package to run it.
 
-```{r}
-
+```{r,eval=FALSE}
+runGitHub("thozh912/Shinyapp")
 ```
 
