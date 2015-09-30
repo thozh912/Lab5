@@ -19,4 +19,3 @@ This function returns the current song and artist on the specified channel
 name from SR v.2. API.
 }
 
-
