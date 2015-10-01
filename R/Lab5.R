@@ -9,14 +9,19 @@
 #' @docType package
 #'
 #' @section Lab5 functions:
-#' The function \code{get_channels} returns a data frame with all the
-#' channels and channel ids of SR. The function
+#'  \itemize{
+#'  \item{\code{get_channels}}{ The function \code{get_channels} returns a data frame with all the
+#'  channels and channel ids of SR.}
+#'  \item{\code{get_programs}}{ The function
 #' \code{get_programs} takes data frame produced by \code{get_channels} and returns a data frame
-#' with all the non-archived radio programmes and their broadcast channels. The function
+#' with all the non-archived radio programmes and their broadcast channels.}
+#'  \item{\code{get_song}}{ The function
 #' \code{get_song} takes a radio channel character name and the data frame produced by \code{get_channels} and returns
-#' the name of the current programme and programme episode on that radio channel. The function \code{main} saves data frames returned
-#' by the other functions and saves them in .csv files in directory one up and two down into Shinyapp/data.
-#'
+#' the name of the current programme and programme episode on that radio channel.}
+#'  \item{\code{main}}{ The function \code{main} saves data frames returned
+#' by the other functions and saves them in .csv files in directory one up and two down into Shinyapp/data.}
+#'  }
+#'  
 #' 
-#' @export
+#' 
 NULL

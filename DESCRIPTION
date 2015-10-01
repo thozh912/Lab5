@@ -1,17 +1,19 @@
 Package: Lab5
 Type: Package
-Title: Web API Package for
+Title: Web API Package for SR Radio Open API
 Version: 1.0.0
 Date: 2015-09-22
 Authors@R: c(
     person("Andrea", "Bruzzone", email = "andrea.bruzzone92@gmail.com", role = c("aut")),
     person("Thomas", "Zhang", email = "thomaszhangswe@gmail.com", role = c("aut", "cre"))
     )
-Description: This package contains a web API for accessing
+Description: This package contains a web API for accessing SR Radio Open API
 License: CC0
 Imports:
     httr
-Depends: R (>= 3.1.0)
+Depends: 
+    R (>= 3.1.0),
+    httr
 Suggests: knitr,
     testthat
 VignetteBuilder: knitr
